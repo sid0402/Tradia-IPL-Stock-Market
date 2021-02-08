@@ -261,15 +261,6 @@ class GameData(tk.Frame):
                     record.grid(row=j+2,column=i+1,padx=10,pady=10)
                     added_value = game_data[columns[i]].iloc[j]
                     record.insert(0,added_value)
-            
-            my_canvas = tk.Canvas(self)
-            #my_canvas.pack(side = 'left')
-            yscrollbar = ttk.Scrollbar(self,orient = 'vertical', command = my_canvas.yview)
-            yscrollbar.grid(row=0,column=0,padx=10,pady=10)
-            my_frame = tk.Frame(my_canvas)
-            my_canvas.configure(yscrollcommand=yscrollbar.set)
-            my_canvas.bind('<Configure>' , lambda e: my_canvas.configure(scrollregion = my_canvas.bbox('all')))
-            my_canvas.create_window((0,0),window=my_frame,anchor='nw')
         
         refresh_button = ttk.Button(self,text="Refresh Page", command = refresh3)
         refresh_button.grid(row=0,column=3)        
